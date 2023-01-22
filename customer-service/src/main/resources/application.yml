@@ -1,19 +1,48 @@
 server:
   port: 8082
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-  instance:
-    hostname: localhost
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#  instance:
+#    hostname: localhost
+logging:
+  level:
+    root: WARN
+    org.springframework: INFO
+    org.apache.kafka: DEBUG
+
 spring:
   application:
     name: customer-service
   datasource:
     password: root
-    url: jdbc:mysql://localhost:3306/e-mandi?useSSL=true
+    url: jdbc:mysql://localhost:3306/e-user?useSSL=true
     username: root
   jpa:
     hibernate:
       ddl-auto: 'update '
     show-sql: true
+#  kafka:
+#    consumer:
+#      bootstrap-servers: localhost:9092
+#      group-id: nagaraju1
+#      auto-offset-reset: earliest
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      enable-auto-commit: false
+#    ssl:
+#      trust-store-type: SSL
+#      key-store-key:
+#      key-store-password:
+#      key-store-location:
+#    security:
+#      protocol: SASL_SSL
+#    producer:
+#      bootstrap-servers: localhost:9092
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#    topics:
+#      input: createUser
+
+

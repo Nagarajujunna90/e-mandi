@@ -1,9 +1,9 @@
 package com.emandi.customerservice.model;
 
-import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.util.Set;
 @Data
 @NoArgsConstructor
@@ -14,7 +14,7 @@ public class Role {
 	private int id;
 	private String name;
 	@ManyToMany(mappedBy = "roles")
-	private Set<Customer> customer;
+	private Set<User> user;
 
 	public Role(String name) {
 		this.name=name;

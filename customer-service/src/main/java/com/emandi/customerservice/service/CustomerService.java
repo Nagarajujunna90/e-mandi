@@ -1,16 +1,17 @@
 package com.emandi.customerservice.service;
 
 
-import com.emandi.customerservice.model.Customer;
+import com.emandi.customerservice.model.User;
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 import java.util.List;
 
 public interface CustomerService {
 
-	void createUser(Customer userdto);
+	User createUser(User userdto) throws JsonProcessingException;
 	void deleteUser(Integer id);
-	Customer updateUser(Integer id, Customer userdto);
-	public Customer findByUserId(Integer id);
-	List<Customer> findAllUserDetails();
+	User updateUser(Integer id, User userdto);
+	public User findByUserId(Integer id);
+	List<User> findAllUserDetails();
 
 }

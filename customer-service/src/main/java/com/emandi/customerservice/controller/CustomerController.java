@@ -1,14 +1,13 @@
 package com.emandi.customerservice.controller;
 
 
-import com.emandi.customerservice.model.Customer;
+import com.emandi.customerservice.model.User;
 import com.emandi.customerservice.service.CustomerService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/customer/v1")
@@ -16,10 +15,15 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
+    public CustomerController(CustomerService customerService) {
+        this.customerService = customerService;
+    }
+
+
     @PostMapping("/user")
-    public ResponseEntity<String> createUser(@RequestBody Customer customer) {
-        customerService.createUser(customer);
-        return new ResponseEntity<>("user inserted successfully", HttpStatus.CREATED);
+    public ResponseEntity<User> createUser(@RequestBody User user) throws JsonProcessingException {
+        User createdUser = customerService.createUser(user);
+        return new ResponseEntity<>(createdUser, HttpStatus.CREATED);
     }
 
     @DeleteMapping("/user/{id}")
@@ -29,22 +33,17 @@ public class CustomerController {
     }
 
     @PutMapping("/user/{id}")
-    public ResponseEntity<Customer> updateUser(@PathVariable("id") Integer id, @RequestBody Customer customerDto) {
-        Customer customer = customerService.updateUser(id, customerDto);
-        return new ResponseEntity<>(customer, HttpStatus.CREATED);
+    public ResponseEntity<User> updateUser(@PathVariable("id") Integer id, @RequestBody User user) {
+        User updatedUser = customerService.updateUser(id, user);
+        return new ResponseEntity<>(updatedUser, HttpStatus.CREATED);
 
     }
 
     @GetMapping("/user/{id}")
     public ResponseEntity<?> findByUserId(@PathVariable("id") Integer id) {
-        Customer customer = customerService.findByUserId(id);
-        return new ResponseEntity<>(customer, HttpStatus.OK);
+        User user = customerService.findByUserId(id);
+        return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
-    @GetMapping("/users")
-    public ResponseEntity<?> findAllUsers() {
-        List<Customer> userlist = customerService.findAllUserDetails();
-        return new ResponseEntity<>(userlist, HttpStatus.OK);
 
-    }
 }

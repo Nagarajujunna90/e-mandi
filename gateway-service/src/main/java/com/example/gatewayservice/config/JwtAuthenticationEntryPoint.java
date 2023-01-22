@@ -1,3 +1,4 @@
+/*
 package com.example.gatewayservice.config;
 
 import org.springframework.security.core.AuthenticationException;
@@ -18,3 +19,4 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Se
                 "Unauthorized");
     }
 }
+*/

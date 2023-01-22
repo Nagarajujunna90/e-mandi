@@ -1,7 +1,6 @@
 /*
 package com.example.gatewayservice.config;
 
-import com.example.gatewayservice.repository.JWTFilter;
 import com.example.gatewayservice.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -49,11 +48,10 @@ public class SecurityConfiguration {
         return http.build();
     }
 
-   */
-/* @Bean
+ @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring().anyRequest();
-    }*//*
+    }
 
 
 }
