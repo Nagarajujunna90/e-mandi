@@ -19,7 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin("http://3.88.216.131")
 @RestController
 @RequestMapping("/product/v1")
 public class ProductController {

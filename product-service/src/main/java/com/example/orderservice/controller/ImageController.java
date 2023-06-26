@@ -15,7 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.websocket.server.PathParam;
 
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin("http://3.88.216.131")
 @RestController
 @RequestMapping("/image/v1")
 public class ImageController {
