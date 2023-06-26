@@ -1,17 +1,21 @@
 package com.example.orderservice.service;
 
 import com.example.orderservice.model.Product;
+import com.example.orderservice.model.ProductResponse;
 
 import java.util.List;
 
 public interface ProductService {
     Product createProduct(Product productRequest);
 
-    Product updateProduct(Product productRequest, Integer orderId);
+    Product updateProduct(Product productRequest, String orderId);
 
-    Product getProductById(Integer orderId);
+    ProductResponse getProductById(Integer productId);
 
-    List<Product> getAllProducts();
+    List<ProductResponse> getAllProducts();
 
-    void deleteProductById(Integer orderId);
+    void deleteProductById(Integer productId);
+
+    Integer updateProductWithImageId(String productId, Integer imageId);
+
 }

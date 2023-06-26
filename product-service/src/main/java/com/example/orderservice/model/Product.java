@@ -2,26 +2,26 @@ package com.example.orderservice.model;
 
 
 import lombok.Data;
+import org.springframework.web.multipart.MultipartFile;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
+import java.sql.Blob;
 import java.util.Date;
-import java.util.List;
 
 @Data
 @Entity
 public class Product {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private String productDescription;
     private String name;
-
+    private String description;
+    private Double price;
+    private String company;
     private Date manufacturingDate;
+    private Date expiryDate;
+    private Integer imageId;
 
-    private String productCompany;
-
-    
 
    /* @ManyToMany(mappedBy = "orders")
     private List<User> users;*/
