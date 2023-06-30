@@ -14,12 +14,17 @@
     <name>product-service</name>
     <description>Demo project for Spring Boot</description>
     <properties>
+        <maven.compiler.plugin.version>3.6.1</maven.compiler.plugin.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <aws.java.sdk.version>2.20.93</aws.java.sdk.version>
         <java.version>1.8</java.version>
-        <!--
-                <spring-cloud.version>2022.0.0</spring-cloud.version>
-        -->
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -30,42 +35,73 @@
             <scope>runtime</scope>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>io.awspring.cloud</groupId>
+            <artifactId>spring-cloud-starter-aws-secrets-manager-config</artifactId>
+            <version>2.4.4</version>
         </dependency>
-        <!--	<dependency>
+<!--
+        	<dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
             </dependency>
-    -->
+-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>1.18.26</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <version>3.1.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
-            <version>1.6.14</version>
+            <version>1.6.15</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.google.code.gson</groupId>-->
+<!--            <artifactId>gson</artifactId>-->
+<!--            <version>2.10.1</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>software.amazon.awssdk</groupId>-->
+<!--            <artifactId>secretsmanager</artifactId>-->
+<!--            <version>2.20.77</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>software.amazon.awssdk</groupId>-->
+<!--            <artifactId>regions</artifactId>-->
+<!--        </dependency>-->
     </dependencies>
-    <!--<dependencyManagement>
+    <dependencyManagement>
         <dependencies>
-            <dependency>
+          <!--  <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>
+            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>software.amazon.awssdk</groupId>-->
+<!--                <artifactId>bom</artifactId>-->
+<!--                <version>${aws.java.sdk.version}</version>-->
+<!--                <type>pom</type>-->
+<!--                <scope>import</scope>-->
+<!--            </dependency>-->
+        <!--    <dependency>
+                <groupId>io.awspring.cloud</groupId>
+                <artifactId>spring-cloud-aws-dependencies</artifactId>
+                <version>2.3.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>-->
         </dependencies>
-    </dependencyManagement>-->
-
+    </dependencyManagement>
     <build>
         <plugins>
             <plugin>
@@ -80,7 +116,28 @@
                     </excludes>
                 </configuration>
             </plugin>
-
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-assembly-plugin</artifactId>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <phase>package</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>single</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--                <configuration>-->
+<!--                    <descriptorRefs>-->
+<!--                        <descriptorRef>jar-with-dependencies</descriptorRef>-->
+<!--                    </descriptorRefs>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <version>${maven.compiler.plugin.version}</version>-->
+<!--            </plugin>-->
         </plugins>
     </build>
     <repositories>

@@ -11,9 +11,12 @@ spring:
     name: product-service
   datasource:
     password: root
-    url: jdbc:mysql://localhost:3306/e-product?useSSL=true
+    url: jdbc:mysql://root:3306/e-product?useSSL=true
     username: root
   jpa:
     hibernate:
-      ddl-auto: 'update '
+      ddl-auto: update
     show-sql: true
+#  config:
+#    import: aws-secretsmanager:mysql-rds
+#    use-legacy-processing: false
