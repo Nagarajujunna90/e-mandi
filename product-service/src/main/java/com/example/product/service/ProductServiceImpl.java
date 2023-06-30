@@ -1,10 +1,10 @@
-package com.example.orderservice.service;
+package com.example.product.service;
 
-import com.example.orderservice.model.Image;
-import com.example.orderservice.model.Product;
-import com.example.orderservice.model.ProductResponse;
-import com.example.orderservice.repo.ImageRepo;
-import com.example.orderservice.repo.ProductRepo;
+import com.example.product.model.Image;
+import com.example.product.model.Product;
+import com.example.product.model.ProductResponse;
+import com.example.product.repo.ImageRepo;
+import com.example.product.repo.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

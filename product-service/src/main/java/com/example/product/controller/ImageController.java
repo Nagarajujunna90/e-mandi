@@ -1,8 +1,8 @@
-package com.example.orderservice.controller;
+package com.example.product.controller;
 
-import com.example.orderservice.model.Image;
-import com.example.orderservice.service.ImageService;
-import com.example.orderservice.service.ProductService;
+import com.example.product.model.Image;
+import com.example.product.service.ImageService;
+import com.example.product.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
@@ -12,8 +12,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
-import javax.websocket.server.PathParam;
 
 @CrossOrigin("http://3.88.216.131")
 @RestController

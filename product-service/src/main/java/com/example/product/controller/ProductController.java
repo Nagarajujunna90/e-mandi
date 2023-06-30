@@ -1,20 +1,13 @@
-package com.example.orderservice.controller;
+package com.example.product.controller;
 
-import com.example.orderservice.model.Image;
-import com.example.orderservice.model.Product;
-import com.example.orderservice.model.ProductResponse;
-import com.example.orderservice.service.ImageService;
-import com.example.orderservice.service.ProductService;
+import com.example.product.model.Product;
+import com.example.product.model.ProductResponse;
+import com.example.product.service.ImageService;
+import com.example.product.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ByteArrayResource;
-import org.springframework.core.io.Resource;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;

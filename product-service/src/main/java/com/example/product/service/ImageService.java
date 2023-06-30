@@ -1,6 +1,6 @@
-package com.example.orderservice.service;
+package com.example.product.service;
 
-import com.example.orderservice.model.Image;
+import com.example.product.model.Image;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;

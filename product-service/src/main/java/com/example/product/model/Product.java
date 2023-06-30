@@ -1,11 +1,9 @@
-package com.example.orderservice.model;
+package com.example.product.model;
 
 
 import lombok.Data;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
-import java.sql.Blob;
 import java.util.Date;
 
 @Data

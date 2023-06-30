@@ -1,12 +1,12 @@
-package com.example.orderservice;
+package com.example.product;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.ApplicationRunner;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
+@OpenAPIDefinition(info = @Info(title = "product-service"))
 public class ProductServiceApplication {
    /* @Value("${key-test}")
     private String value;*/
@@ -14,10 +14,10 @@ public class ProductServiceApplication {
         SpringApplication.run(ProductServiceApplication.class, args);
     }
 
-    @Bean
+/*    @Bean
     public ApplicationRunner applicationRunner(@Value("${username}") String value) {
         return args->{
 			System.out.println(value);
 		};
-    }
+    }*/
 }

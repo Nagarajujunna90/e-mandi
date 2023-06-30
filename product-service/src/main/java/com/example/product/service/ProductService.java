@@ -1,7 +1,7 @@
-package com.example.orderservice.service;
+package com.example.product.service;
 
-import com.example.orderservice.model.Product;
-import com.example.orderservice.model.ProductResponse;
+import com.example.product.model.Product;
+import com.example.product.model.ProductResponse;
 
 import java.util.List;
 
