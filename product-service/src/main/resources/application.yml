@@ -6,14 +6,16 @@ server:
 #    fetch-registry: true
 #  instance:
 #    hostname: localhost
+
+#cloud:
+#  aws:
+#    region:
+#      static: us-east-1
+#      auto: false
+#    credentials:
+#        access-key: AKIAVU3BP7RK3U3Y34MQ
+#        secret-key: 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
+
 spring:
-  application:
-    name: product-service
-  datasource:
-    password: Advika123
-    url: jdbc:mysql://nagaraju.cblywpkgn4z6.us-east-1.rds.amazonaws.com:3306/e-product?useSSL=true
-    username: admin
-  jpa:
-    hibernate:
-      ddl-auto: 'update '
-    show-sql: true
+  profiles:
+    active: local
