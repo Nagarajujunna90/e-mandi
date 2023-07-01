@@ -1,19 +1,19 @@
 server:
   port: 8083
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-  instance:
-    hostname: localhost
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#  instance:
+#    hostname: localhost
 spring:
   application:
     name: order-service
   datasource:
     password: root
-    url: jdbc:mysql://localhost:3306/e-mandi?useSSL=true
+    url: jdbc:mysql://localhost:3306/e-order?useSSL=true
     username: root
   jpa:
     hibernate:
-      ddl-auto: 'update '
+      ddl-auto: 'update'
     show-sql: true

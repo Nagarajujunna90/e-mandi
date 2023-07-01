@@ -6,6 +6,7 @@ import com.emandi.adminservice.model.User;
 import com.emandi.adminservice.repository.RoleRepository;
 import com.emandi.adminservice.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
@@ -19,6 +20,8 @@ public class UserServiceImpl implements UserService {
 	private UserRepository userRepositroy;
 	@Autowired
 	private RoleRepository roleRepository;
+	@Autowired
+	private KafkaTemplate<String, String> kafkaTemplate;
 
 	@Override
 	public void createUser(User user) {
@@ -27,8 +30,13 @@ public class UserServiceImpl implements UserService {
 		roles1.add(new Role("Admin"));
 		user.setRoles(roles1);
 		User user1 = userRepositroy.save(user);
-	}
+		sendMessage(String.valueOf(user1));
 
+	}
+	public void sendMessage(String msg) {
+		String topicName="test";
+		kafkaTemplate.send(topicName, msg);
+	}
 	@Override
 	public void deleteUser(Integer id) {
 		userRepositroy.deleteById(id);

@@ -15,6 +15,10 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    public OrderController(OrderService orderService) {
+        this.orderService = orderService;
+    }
+
     @PostMapping("/order")
     public ResponseEntity<Order> createOrder(@RequestBody Order orderRequest) {
         Order order = orderService.createOrder(orderRequest);
