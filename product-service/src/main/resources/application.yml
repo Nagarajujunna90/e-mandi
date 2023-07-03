@@ -13,8 +13,8 @@ server:
 #      static: us-east-1
 #      auto: false
 #    credentials:
-#        access-key: AKIAVU3BP7RK3U3Y34MQ
-#        secret-key: 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
+#        access-key: 
+#        secret-key: 
 
 spring:
   profiles:
